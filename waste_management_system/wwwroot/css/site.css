@@ -1,0 +1,240 @@
+:root {
+    --primary-color: #84cc16;
+    --primary-hover-color: #4d7c0f;
+    --second-color: black;
+    --scroll-color: #fafafa;
+    --text-banner: white;
+    --img-banner: url(../img/Banner.jpg);
+}
+
+html {
+    font-size: 14px;
+    min-height: 100%;
+    position: relative;
+}
+
+.container-md {
+    margin-bottom: 5%;
+}
+
+header {
+    height: 650px;
+}
+
+#banner {
+    height: 130%;
+    background-position: top;
+    background-size: 100% 80%;
+    background-repeat: no-repeat;
+    background-image: var(--img-banner);
+}
+
+nav {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    position: fixed;
+    flex-direction: row;
+    background-color: transparent;
+    justify-content: space-between;
+}
+
+nav.scrolled {
+    z-index: 10;
+    background-color: var(--scroll-color);
+}
+
+#navbarElement {
+    width: 100%;
+    padding: 3%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#menssageBanner {
+    margin-top: 15%;
+    margin-left: 35%;
+    position: absolute;
+    text-align: center;
+    color: var(--text-banner);
+}
+
+ul {
+    display: flex;
+    list-style: none;
+    flex-direction: row;
+    width: 100px;
+    margin-right: 20%;
+    align-items: center;
+}
+
+#homeTitle {
+    margin-top: -30px;
+    font-size: x-large;
+}
+
+li {
+    display: flex;
+    width: 300px;
+    margin-top: -4.5%;
+}
+
+
+li > a {
+    width: 100px;
+    padding: 50px;
+    text-decoration: none;
+}
+
+a {
+    font-size: 16px;
+    font-weight: bolder;
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+.li-logout {
+    font-size: 16px;
+    font-weight: bold;
+    border: 0;
+    width: 100px;
+    background-color: transparent;
+    color: var(--primary-color)
+}
+
+    .li-logout:hover {
+        color: var(--primary-hover-color);
+    }
+
+a:hover {
+    color: var(--primary-hover-color);
+}
+
+.dropbtn {
+    background-color: transparent;
+    color: #84cc16;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.dropdown {
+    /*margin-top: -4.5%;*/
+    position: relative;
+    display: inline-block;
+    margin-left: 30px;
+    margin-right: 25px;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: whitesmoke;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: #84cc16;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    color: #4d7c0f;
+    background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+    color: #4d7c0f;
+}
+
+.dropdown:hover .dropbtn {
+    color: #4d7c0f;
+    background-color: transparent;
+}
+
+/* Notebook - 1024 x 1366*/
+@media screen and (min-width: 1024px) and (max-width: 1366px) {
+    #banner {
+        height: 75%;
+    }
+
+    #homeTitle {
+        width: 80%;
+        margin-top: -5px;
+    }
+
+    ul {
+        width: 100%;
+        margin-top: 5px;
+    }
+
+    li > a {
+        padding: 0px;
+        width: 100px;
+        display: inherit;
+    }
+
+    .dropdown {
+        margin-top: -7.5%;
+        margin-left: -9px;
+    }
+
+    #menssageBanner {
+        margin-top: 15%;
+        margin-left: 32.5%;
+        position: absolute;
+    }
+
+    .container-md {
+        margin-bottom: 80%;
+    }
+}
+
+/* Notebook - 1367px x 1709px */
+@media screen and (min-width: 1367px) and (max-width: 1709px) {
+    #banner {
+        height: 95%;
+    }
+
+    #homeTitle {
+        margin-top: -5px;
+    }
+
+    ul {
+        margin-top: 5px;
+    }
+
+    .dropdown {
+        margin-top: -3.8%;
+        margin-left: 41px;
+    }
+
+    #menssageBanner {
+        margin-top: 14%;
+        margin-left: 36%;
+    }
+
+    .container-md {
+        margin-bottom: 5%;
+    }
+}
+
+/* Notebook - 1710px x 1919px*/
+@media screen and (min-width: 1710px) and (max-width: 1919px) {
+    #banner {
+        height: 110%;
+    }
+
+    #menssageBanner {
+        margin-top: 15.5%;
+        margin-left: 40%;
+    }
+}

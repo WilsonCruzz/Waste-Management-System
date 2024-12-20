@@ -1,0 +1,153 @@
+﻿#list-panel-Title {
+    margin-top: 5%;
+    text-align: center;
+}
+
+#list-SubTitle {
+    color: var(--primary-hover-color)
+}
+
+#list-panel-filter {
+    display: flex;
+    flex-direction: column;
+}
+
+#list-filter {
+    margin-bottom: 2%;
+    margin-left: -17%;
+}
+
+.list-input {
+    width: 300px;
+    height: 40px;
+    border-radius: 5px;
+    padding: .375rem .75rem;
+    border: 1px solid var(--border-input-text);
+}
+
+#list-input-filter {
+    display: flex;
+    margin-left: -17%;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#list-group-part-1 {
+    display: flex;
+    flex-direction: row
+}
+
+#list-group-part-2 {
+    display: flex;
+    flex-direction: row
+}
+
+.list-group-filter {
+    display: flex;
+    flex-direction: row;
+}
+
+#list-span-address {
+    margin-right: 15%;
+    align-content: center;
+}
+
+.list-select-address {
+    width: 300px;
+    height: 40px;
+    margin-right: 60px;
+    border-radius: 5px;
+    padding: .375rem .75rem;
+    border: 1px solid var(--border-input-text);
+}
+
+.list-span {
+    width: 145px;
+    margin-left: 5%;
+    align-content: center;
+}
+
+.list-select {
+    width: 300px;
+    height: 40px;
+    border-radius: 5px;
+    padding: .375rem .75rem;
+    border: 1px solid var(--border-input-text);
+}
+
+.list-select-address:focus {
+    outline: none;
+    border-color: var(--border-focus-input-text);
+    box-shadow: 0 0 10px var(--border-focus-input-text);
+}
+
+.list-input:focus {
+    outline: none;
+    border-color: var(--border-focus-input-text);
+    box-shadow: 0 0 10px var(--border-focus-input-text);
+}
+
+.list-select:focus {
+    outline: none;
+    border-color: var(--border-focus-input-text);
+    box-shadow: 0 0 10px var(--border-focus-input-text);
+}
+
+#list-panel-button {
+    display: flex;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    justify-content: center;
+}
+
+#list-button {
+    width: 300px;
+    margin-bottom: 2%;
+}
+
+#list-panel-table {
+    display: flex;
+    justify-content: center;
+}
+
+#list-tr {
+    border-bottom: 1px solid green;
+}
+
+.list-td-title {
+    padding: 10px;
+    font-size: small;
+    text-align: center;
+}
+
+.list-td-content {
+    padding: 10px;
+    text-align: center;
+}
+
+.list-SVG {
+    width: 25px
+}
+
+@media screen and (min-width: 1367px) and (max-width: 1709px) {
+    #list-filter {
+        margin-left: -5%; 
+    }
+
+    #list-input-filter {
+        margin-left: -5%;
+        
+    }
+
+    .list-select-address {
+        width: 225px;
+    }
+
+    .list-input {
+        width: 225px;
+    }
+
+    .list-select {
+        width: 225px;
+    }
+}

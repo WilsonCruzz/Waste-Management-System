@@ -1,0 +1,57 @@
+﻿@model dynamic
+
+<div id="update-panel-Title">
+    <h1>#REQUEST @ViewBag.RequestNumber</h1>
+    <h3>Client: @ViewBag.companyName</h3>
+    <hr />
+</div>
+
+<br />
+
+<div style="display: flex; flex-direction: column; justify-content: center;">
+    <div>
+        <div style="display: flex; flex-direction: row; justify-content: space-between;">
+            <span style="align-content: center;">Responsible</span>
+            <input class="delete-input" value="@Model.responsible" disabled />
+
+            <span style="align-content: center;">Phone Number</span>
+            <input class="delete-input" value="@Model.responsible" disabled />
+
+            <span style="align-content: center;">Email</span>
+            <input class="delete-input" value="@Model.responsible" disabled />
+        </div>
+
+        <br />
+
+        <div style="display: flex; flex-direction: row; justify-content: space-between;">
+            <span style="align-content: center;">Type Waste</span>
+            <input class="delete-input" value="@Model.wasteName" disabled />
+
+            <span style="align-content: center;">Type Vehicle</span>
+            <input class="delete-input" value="@Model.typeVehicle" disabled />
+        </div>
+
+        <br />
+
+        <div style="display: flex; flex-direction: row; justify-content: space-between;">
+            <span style="align-content: center;">Pickup Date</span>
+            <input class="delete-input" value="@Model.pickupDate.ToString("dd-MM-yyyy")" disabled />
+
+            <span style="align-content: center;">Status Request</span>
+            <input class="delete-input" value="@Model.statusName" disabled />
+
+            <span style="align-content: center;">Date Created</span>
+            <input class="delete-input" value="@Model.requestDate.ToString("dd-MM-yyyy")" disabled />
+        </div>
+
+        <br />
+    </div>
+</div>
+ 
+<div>
+    <center>
+        <form asp-action="Delete">
+            <input type="submit" value="Delete" />
+        </form>
+    </center>
+</div>

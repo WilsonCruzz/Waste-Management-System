@@ -1,0 +1,31 @@
+﻿<form asp-action="Login">
+    <div class="login-panel">
+        <div class="login-panel-form">
+            <img class="login-img" src="~/img/User/Account/Aside-Banner.jpg" alt="image aside decoration" />
+            <div class="login-form-content">
+                <div class="login-panel-img">
+                    <img class="login-avatar" src="~/img/User/Avatar/Woman-profile.png" alt="Avatar Image profile" />
+                </div>
+                <form asp-controller="UserProfiles" asp-action="Login" method="post">
+                    <div class="login-panel-email">
+                        <span for="email" class="login-content-span">Email:</span>
+                        <input type="email" class="update-input" name="email" placeholder="Enter your email" required />
+                    </div>
+                    <br />
+                    <div class="login-panel-password">
+                        <span for="password" class="login-content-span">Password:</span>
+                        <input class="update-input" name="password" type="password" placeholder="Enter your password" required/>
+                    </div>
+                </form>
+                <a href="/identity/account/login" class="login-button-forgot">Third-party login</a>
+
+                <br />
+                <br />
+
+                <div class="login-panel-submit">
+                    <button class="login-button-submit">Sign In</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

@@ -1,0 +1,96 @@
+﻿@model dynamic
+
+<div id="create-panel-Title">
+    <h1>NEW PICKUP REQUEST</h1>
+    <h3 id="create-SubTitle">Client: @ViewBag.companyName</h3>
+    <hr />
+</div>
+
+@if(ViewBag.msj != null)
+{
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong>Great news!</strong><span id="notify" name="notify">@ViewBag.msj</span>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+}
+
+<div id="create-panel-form">
+    <form asp-action="Create" class="needs-validation">
+        <div class="create-group-row">
+            <div id="create-first-group">
+                <div id="create-first-label">
+                    <label class="create-span">In which address the pickup will be made:</label>
+                </div>
+
+                <div class="create-input-group">
+                    <input class="create-input" disabled value="@ViewBag.Address" />
+                </div>
+            </div>
+
+            <div id="create-group-address">
+                <div id="create-span-adress">
+                    <label class="create-span">Date of pickup required:</label>
+                </div>
+
+                <div class="create-input-group">
+                    <input type="date" class="create-input" name="pickUpDate" required/>
+                </div>
+            </div>
+        </div>
+
+        <div class="create-group-row">
+            <div id="create-second-group">
+                <div id="create-second-label">
+                    <label class="create-span">Type of waste:</label>
+                </div>
+
+                <div class="create-input-group">
+                    <select class="create-select" id="typeWasteID" name="TypeOfWasteId" asp-items="ViewBag.Waste" onclick="pickListTypeWaste()" required>
+                        <option disabled selected style="display:none">Seleccione</option>
+                    </select>
+                </div>
+            </div>
+
+            <div style="display: flex;flex-direction: row;justify-content: space-between; width: 40%;">
+                <div style="display: flex; flex-direction: row; margin-right: 1%;">
+                    <label class="create-span">Truck capacity required:</label>
+                </div>
+
+                <div class="create-input-group">
+                    <input id="vehicleID" name="vehicleID" class="create-input" disabled value="" />
+                </div>
+            </div>
+        </div>
+
+        <div id="create-panel-observation">
+            <span class="create-span">Observation</span>
+            <textarea id="create-text-area" name="observationREQ" rows="5" cols="50" required></textarea>
+        </div>
+
+        <div id="create-panel-submit">
+            <input id="create-button" type="button" value="Create" data-bs-toggle="modal" data-bs-target="#exampleModal" />
+        </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Waste Pickup Request</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div style="padding: 30px" class="modal-body">
+                    Are you sure you want to submit this waste pickup request? Once submitted, our team will contact you to coordinate the details of the pickup. If you're sure, click "Create REQ". If you need to make any changes, you can go back and modify the request before submitting.
+                    </div>
+                    <div style="display: flex; flex-direction: row; justify-content: center;">
+                        <button style="width: 30%;margin-bottom: 5%;" type="submit">Create REQ</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    <script src="~/js/pickuprequest/picklisttypewaste.js"></script>
+}

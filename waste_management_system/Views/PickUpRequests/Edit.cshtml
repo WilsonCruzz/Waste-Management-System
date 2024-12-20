@@ -1,0 +1,95 @@
+﻿@model dynamic
+
+@{
+    var observations = ViewBag.Observation;
+}
+
+<div id="update-panel-Title">
+    <h1>#REQUEST @ViewBag.RequestNumber</h1>
+    <h3 id="update-SubTitle">Client: @ViewBag.companyName</h3>
+    <hr />
+</div>
+
+<form asp-action="Edit">
+    <div class="update-row">
+        <span class="update-span">Responsible</span>
+        <input class="update-input" value="@Model.responsible" disabled />
+
+        <span class="update-span">Email</span>
+        <input class="update-input" value="@Model.email" disabled />
+
+
+        <span class="update-span">Date Created</span>
+        <input class="update-input" value="@Model.requestDate.ToString("dd-MM-yyyy")" disabled />
+    </div>
+
+    <br />
+    <br />
+
+    <div id="update-second-group-row">
+        <div class="update-row">
+            <span class="update-span-group">Pickup Date</span>
+            <input class="update-input" value="@Model.pickupDate.ToString("dd-MM-yyyy")" disabled />
+
+            <span class="update-span-second-group">New Pickup Date</span>
+            <input class="update-input" name="PickupDate" type="date" />
+        </div>
+        <br />
+        <br />
+        <div class="update-row">
+            <span class="update-span-group">Type of Waste</span>
+            <input class="update-input" value="@Model.wasteName" disabled />
+
+            <span class="update-span-second-group">New Type of Waste</span>
+            <select id="typeWasteID" name="typeWasteID" class="update-select" onclick="pickListTypeWaste()" asp-items="ViewBag.Waste">
+                <option disabled selected style="display:none">Seleccione</option>
+            </select>
+        </div>
+        <br />
+        <br />
+        <div class="update-row">
+            <span id="update-span-type">Type Vehicle</span>
+            <input class="update-input" value="@Model.typeVehicle" disabled />
+
+            <span class="update-span-second-group">New Vehicle</span>
+            <input class="update-input" id="vehicleID" name="vehicleID"/>
+        </div>
+
+        <br />
+
+        <center>
+            <button id="update-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                Show observation history
+            </button>
+        </center>
+
+        <div class="collapse" id="collapseExample">
+            <div class="card card-body">
+                @if (observations != null)
+                {
+                    @foreach (var item in observations)
+                    {
+                        <span><strong>Author:</strong> @item.observationAuthor</span>
+                        <span><strong>Date:</strong> @item.observationDate.ToString("dd-MM-yyyy")</span>
+                        <span>@item.observationUser</span>
+                        <br />
+                    }
+                }
+            </div>
+        </div>
+
+        <div id="create-panel-observation">
+            <span class="create-span">New Observation</span>
+            <textarea id="create-text-area" name="observation" rows="5" cols="50"></textarea>
+        </div>
+
+        <div style="display: flex; justify-content: center;" class="form-group">
+            <input type="submit" value="Save" class="btn btn-primary" />
+        </div>
+    </div>
+</form>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    <script src="~/js/pickuprequest/picklisttypewaste.js"></script>
+}

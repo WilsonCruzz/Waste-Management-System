@@ -1,0 +1,104 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GreenWave Disposal</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <!-- STYLE PAGES -->
+    <link rel="stylesheet" href="~/waste_management_system.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/Home/Index.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/Contact/Contact.css" asp-append-version="true"/>
+    <link rel="stylesheet" href="~/css/PickupRequest/CreatePickup.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/PickupRequest/DetailsPickup.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/PickupRequest/ListPickup.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/PickupRequest/UpdatePickup.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/PickupRequest/DeletePickup.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/User/Create.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/User/Login.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" href="~/img/favicon-32x32.png"/>
+
+    <!-- JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <header>
+        <div id="banner">
+            <nav>
+                <div id="navbarElement">
+                    <a id="homeTitle" asp-area="" asp-controller="Home" asp-action="Index">GreenWave Disposal</a>
+                    <ul>
+                        <li>
+                            <div class="dropdown">
+                                <button class="dropbtn">Request</button>
+                                <div class="dropdown-content">
+                                    <a asp-area="" asp-controller="PickUpRequests" asp-action="Create">Create Pickup Request</a>
+                                    <a asp-area="" asp-controller="PickUpRequests" asp-action="Index">History Pickup Request</a>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="dropdown">
+                                <button class="dropbtn">Profile</button>
+                                @if(!User.Identity.IsAuthenticated){
+                                    <div class="dropdown-content">
+                                        <a asp-area="" asp-controller="UserProfiles" asp-action="Create">Create Account</a>
+                                    </div>
+                                }
+                                else{
+                                    <div class="dropdown-content">
+                                        <a asp-area="" asp-controller="UserProfiles" asp-action="EditCurrentUser">Edit Profile</a>
+                                    </div>
+                                }
+                            </div>
+                        </li>       
+                        @if(!User.Identity.IsAuthenticated){
+                            <li>
+                                <span>@TempData["User"]</span>
+                            </li>
+                            <li>
+                                <a asp-area="" asp-controller="UserProfiles" asp-action="Login">Login</a>
+                            </li>
+                        }
+                        else{
+                            <li>
+                                <form asp-controller="UserProfiles" asp-action="Logout" method="post" id="logoutForm" class="navbar-right">
+                                    <button class="li-logout" type="submit">Log out</button>
+                                </form>
+                            </li>
+                        }
+                    </ul>
+                </div>
+            </nav>
+
+            <div id="menssageBanner">
+                <div>
+                    <h3>Join the GreenWave: Eco-Friendly Waste Solutions!</h3>
+                </div>
+                <div>
+                    <h4>Sustainable Disposal Services for a Cleaner Tomorrow</h4>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container-md">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2024 - waste_management_system - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

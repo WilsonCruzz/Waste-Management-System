@@ -1,0 +1,74 @@
+﻿@model waste_management_system.Models.UserProfile
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="user-create-panel">
+    <div class="user-create-panel-content">
+        <img class="user-create-img" src="~/img/User/Account/Aside-Banner.jpg" alt="" />
+        <div class="user-create-form">
+            <div id="create-panel-Title">
+                <h1>Create Account</h1>
+                <hr />
+            </div>
+            <form asp-action="Create" method="post">
+                <div class="user-create-panel-content-Name-Representative">
+                    <span class="user-create-span">Name Representative:</span>
+                    <input asp-for="Responsible" class="update-input" placeholder="John Smith" />
+                    <span asp-validation-for="Responsible" class="text-danger"></span>
+                </div>
+                <br />
+                <div class="user-create-panel-content-form">
+                    <span class="user-create-span">Name Company:</span>
+                    <input asp-for="CompanyName" class="update-input" placeholder="GreenTech Solutions Inc." />
+                    <span asp-validation-for="CompanyName" class="text-danger"></span>
+                </div>
+                <br />
+                <div class="user-create-panel-content-form">
+                    <span class="user-create-span">Address:</span>
+                    <input asp-for="Address" class="update-input" placeholder="144 Bell Farm RdBarrie, ON L4M 5K5" />
+                    <span asp-validation-for="Address" class="text-danger"></span>
+                </div>
+                <br />
+                <div class="user-create-panel-content-form">
+                    <span class="user-create-span">Email:</span>
+                    <input asp-for="Email" class="update-input" placeholder="info@greentechsolutions.com" type="email" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+                <br />
+                <div class="user-create-panel-content-form">
+                    <span class="user-create-span">Password:</span>
+                    <input asp-for="passwordUser" class="update-input" placeholder="Enter your password" type="password" />
+                    <span asp-validation-for="passwordUser" class="text-danger"></span>
+                </div>
+                <br />
+                <div class="user-create-panel-content-form">
+                    <span class="user-create-span">Phone Number:</span>
+                    <input asp-for="PhoneContact" class="update-input" placeholder="+1(604)123-4567" />
+                    <span asp-validation-for="PhoneContact" class="text-danger"></span>
+                </div>
+                <br />
+                <div class="user-create-panel-content-status">
+                    <span class="user-create-span">Status Account:</span>
+                    <input class="update-input" placeholder="Client" value="Client" disabled />
+                    <input type="hidden" asp-for="UserStatusId" value="1" />
+                </div>
+                <br />
+                
+                <div class="user-create-panel-submit">
+                    <button class="user-create-button">Create Account!</button>
+                </div>
+            </form>
+            <br />
+            <a href="/identity/account/login" class="login-button-forgot">Third-party login</a>
+            <br />
+            <br />
+        </div>
+    </div>
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

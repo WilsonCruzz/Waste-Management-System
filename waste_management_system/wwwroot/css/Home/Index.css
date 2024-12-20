@@ -1,0 +1,272 @@
+﻿:root {
+    --title-color: #84cc16;
+    --subtitle-color: #4d7c0f;
+    --text-image-color: white;
+    --color-background-image: #84cc16;
+}
+
+#container-SVG {
+    display: flex;
+    margin-left: 10%;
+    flex-direction: row;
+}
+
+#container-information {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+#map-canvas {
+    width: 900px;
+    height: 450px;
+}
+
+#general-information {
+    display: flex;
+    margin-top: 5%;
+    margin-left: 1%;
+    flex-direction: column;
+}
+
+.panel-information {
+    font-size: small;
+}
+
+#panel-schedule {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.details {
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+}
+
+.panel-information-schedule-day {
+    font-size: small;
+    text-align: start;
+}
+
+.panel-information-schedule-Hour {
+    text-align: end;
+    font-size: small;
+}
+
+#subTitle {
+    margin-top: 5%;
+    margin-bottom: 2%;
+}
+
+#row-SVG {
+    display: flex;
+    margin-top: 5%;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.position-SVG {
+    display: flex;
+    flex-direction: column;
+    margin: 0px 10% 10% 0px;
+}
+
+#clock-SVG {
+    width: 40%;
+    padding: 5px;
+    margin-bottom: 5%;
+}
+
+#estimate-SVG {
+    width: 40%;
+    padding: 5px;
+    margin-bottom: 1%;
+}
+
+#truck-SVG {
+    width: 40%;
+    padding: 5px;
+    margin-bottom: 4%;
+}
+
+#hat-SVG {
+    width: 40%;
+    padding: 5px;
+    margin-bottom: 12%;
+}
+
+.container-text-SVG {
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+}
+
+.text-SVG {
+    font-size: small;
+}
+
+#container-services {
+    display: flex; 
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.services {
+    width: 50%;
+    position: relative;
+    margin-right: 10px;
+}
+
+.image {
+    opacity: 1;
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: .5s ease;
+    backface-visibility: hidden;
+}
+
+.middle {
+    top: 50%;
+    left: 50%;
+    opacity: 0;
+    text-align: center;
+    position: absolute;
+    transition: .5s ease;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+}
+
+#first-service:hover .image {
+    opacity: 0.3;
+}
+
+#first-service:hover .middle {
+    opacity: 1;
+}
+
+#second-service:hover .image {
+    opacity: 0.3;
+}
+
+#second-service:hover .middle {
+    opacity: 1;
+}
+
+#third-service:hover .image {
+    opacity: 0.3;
+}
+
+#third-service:hover .middle {
+    opacity: 1;
+}
+
+.text {
+    font-size: 16px;
+    padding: 16px 32px;
+    color: var(--text-image-color);
+    background-color: var(--color-background-image);
+}
+
+h1 {
+    color: var(--title-color);
+}
+
+h5 {
+    color: var(--subtitle-color);
+}
+
+/* Notebook - 1024 x 1366 */
+@media screen and (min-width: 1024px) and (max-width: 1366px) {
+    .container-md {
+        margin-top: -20%;
+    }
+
+    #row-SVG {
+        margin-left: -10%;
+    }
+
+    .position-SVG {
+        display: flex;
+        flex-direction: column;
+        margin: 0px 5% 10% 0px;
+    }
+
+    #container-information {
+        display: flex;
+        margin-top: -10%;
+        flex-direction: column-reverse;
+    }
+
+    #general-information {
+        margin-top: 10%;
+    }
+
+    #subTitle {
+        margin-bottom: 1%;
+    }
+
+    #map-canvas {
+        margin-top: 5%;
+    }
+
+    .text {
+        font-size: 13px;
+        padding: 10px 10px;
+    }
+}
+
+/* Notebook - 1367px x 1709px */
+@media screen and (min-width: 1367px) and (max-width: 1709px) {
+    #container-SVG {
+        margin-left: 15%;
+    }
+    
+    .container-md {
+        margin-top: -10%;
+    }
+
+    .position-SVG {
+        display: flex;
+        flex-direction: column;
+        margin: 0px 5% 10% 0px;
+    }
+
+    #container-information {
+        display: flex;
+        margin-top: -10%;
+        flex-direction: column-reverse;
+    }
+
+    #general-information {
+        margin-top: 10%;
+    }
+
+    #subTitle {
+        margin-bottom: 1%;
+    }
+
+    #map-canvas {
+        width: 1200px;
+        margin-top: 5%;
+        margin-left: 4%;
+    }
+
+    .text {
+        font-size: 13px;
+        padding: 10px 10px;
+    }
+}
+
+/* Notebook - 1710px x 1919px*/
+@media screen and (min-width: 1710px) and (max-width: 1919px) {
+    #container-SVG {
+        margin-top: -5%;
+    }
+
+    #subTitle {
+        margin-bottom: 1%;
+    }
+}

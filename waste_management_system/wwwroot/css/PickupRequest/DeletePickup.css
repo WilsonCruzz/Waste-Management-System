@@ -1,0 +1,7 @@
+﻿.delete-input {
+    width: 300px;
+    height: 40px;
+    border-radius: 5px;
+    padding: .375rem .75rem;
+    border: 1px solid var(--border-input-text);
+}

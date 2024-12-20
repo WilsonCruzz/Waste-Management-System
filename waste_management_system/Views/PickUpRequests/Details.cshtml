@@ -1,0 +1,54 @@
+﻿@model dynamic
+
+@{
+    var observations = ViewBag.Observation;
+}
+
+<div id="details-panel-Title">
+    <h1>#REQUEST @ViewBag.RequestNumber</h1>
+    <h3 id="update-SubTitle">Client: @ViewBag.companyName</h3>
+    <hr />
+</div>
+
+<div class="update-row">
+    <span class="update-span">Responsible</span>
+    <input class="update-input" value="@Model.responsible" disabled />
+
+    <span class="update-span">Email</span>
+    <input class="update-input" value="@Model.email" disabled />
+
+
+    <span class="update-span">Date Created</span>
+    <input class="update-input" value="@Model.requestDate.ToString("dd-MM-yyyy")" disabled />
+</div>
+
+<br />
+<br />
+
+<div clas="update-row">
+    <span style="margin-left: 2%; margin-right: 1%;" class="update-span">Pickup Date</span>
+    <input style="margin-right: 0%;" class="update-input" value="@Model.pickupDate.ToString("dd-MM-yyyy")" disabled />
+
+    <span style="margin-left: 2%; margin-right: 1%;" class="update-span">Type of Waste</span>
+    <input style="margin-right: 0%;" class="update-input" value="@Model.wasteName" disabled />
+
+
+    <span style="margin-left: 2%; margin-right: 1%;" class="update-span">Type Vehicle</span>
+    <input class="update-input" value="@Model.typeVehicle" disabled />
+</div>
+
+<br />
+<br />
+@if (observations != null)
+{
+    <h1>Observations</h1>
+    @foreach (var item in observations)
+    {
+        <div style="padding: 10px; display: flex; flex-direction:column">
+            <span><strong>Author:</strong> @item.observationAuthor</span>
+            <span><strong>Date:</strong> @item.observationDate.ToString("dd-MM-yyyy")</span>
+            <span>@item.observationUser</span>
+        </div>
+        <br />
+    }
+}

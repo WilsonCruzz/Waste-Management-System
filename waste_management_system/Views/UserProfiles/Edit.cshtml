@@ -1,0 +1,109 @@
+﻿@model waste_management_system.Models.UserProfile
+
+<div id="create-panel-Title">
+    <h1>Company: </h1>
+    <h3 id="create-SubTitle">Responsible: </h3>
+    <hr />
+</div>
+
+<form asp-action="Edit">
+    <div style="display: flex; justify-content: center;">
+        <div style="display: flex; flex-direction: row; justify-content:space-evenly; padding: 50px; border-top-right-radius: 40px;
+    border-bottom-right-radius: 40px; box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.5); width: 80%;">
+            <div>
+                <img style="border-radius: 999px; width: 70%;" src="~/img/User/Avatar/Men-profile.jpg" />
+            </div>
+            <div style="display:flex; flex-direction: column">
+                <div style="display: flex; flex-direction: row;">
+                    <span style="align-content: center; width: 150px;">Address:</span>
+                    <input class="update-input" placeholder="144 Bell Farm RdBarrie, ON L4M 5K5" value="" />
+                </div>
+                <br />
+                <div style="display: flex; flex-direction: row;">
+                    <span style="align-content: center; width: 150px;">Email:</span>
+                    <input class="update-input" placeholder="Ignacio@gmail.com" value="" />
+                </div>
+                <br />
+                <div style="display: flex; flex-direction: row;">
+                    <span style="align-content: center; width: 150px;">Phone Contact:</span>
+                    <input class="update-input" placeholder="+1 (123) 456-789" value="" />
+                </div>
+                <br />
+                <div style="display: flex; flex-direction: row;">
+                    <span style="align-content: center; width: 150px;">Account Kind</span>
+                    <input class="update-input" value="" />
+                </div>
+                <br />
+                <div style="display: flex; flex-direction: row;">
+                    <span style="align-content: center; width: 150px;">Status Account</span>
+                    <input class="update-input" placeholder="+1 (123) 456-789" value="" disabled />
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Update" class="btn btn-primary" />
+                </div>
+
+            </div>
+        </div>
+    </div>
+</form>
+
+@* @model waste_management_system.Models.UserProfile
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>UserProfile</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="UserProfileId" />
+            <div class="form-group">
+                <label asp-for="CompanyName" class="control-label"></label>
+                <input asp-for="CompanyName" class="form-control" />
+                <span asp-validation-for="CompanyName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Responsible" class="control-label"></label>
+                <input asp-for="Responsible" class="form-control" />
+                <span asp-validation-for="Responsible" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Address" class="control-label"></label>
+                <input asp-for="Address" class="form-control" />
+                <span asp-validation-for="Address" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PhoneContact" class="control-label"></label>
+                <input asp-for="PhoneContact" class="form-control" />
+                <span asp-validation-for="PhoneContact" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UserStatusId" class="control-label"></label>
+                <select asp-for="UserStatusId" class="form-control" asp-items="ViewBag.UserStatusId"></select>
+                <span asp-validation-for="UserStatusId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+ *@

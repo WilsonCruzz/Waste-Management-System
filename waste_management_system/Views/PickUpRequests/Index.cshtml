@@ -1,0 +1,79 @@
+﻿@model IEnumerable<dynamic>
+
+<div id="list-panel-Title">
+    <h1>REQUEST HISTORY</h1>
+    <h3 id="list-SubTitle">Client: @ViewBag.companyName</h3>
+    <hr />
+</div>
+
+<div id="list-panel-filter">
+    <form asp-action="Index">
+        <div id="list-filter">
+            Filter by
+        </div>
+        <div id="list-input-filter">
+            <div id="list-group-part-1">
+                <div class="list-group-filter">
+                    <span id="list-span-address">Address</span>
+                    <select id="addressID" name="address" class="list-select-address" asp-items="ViewBag.Address">
+                        <option disabled selected style="display:none">Seleccione</option>
+                    </select>
+                </div>
+                <div class="list-group-filter">
+                    <span class="list-span">Date of request</span>
+                    <input class="list-input" name="dateRequest" type="date" />
+                </div>
+            </div>
+
+            <div id="list-group-part-2">
+                <div class="list-group-filter">
+                    <span class="list-span">Pickup date</span>
+                    <input class="list-input" name="datePickup" type="date" />
+                </div>
+                <div class="list-group-filter">
+                    <span class="list-span">Type of waste</span>
+                    <select id="typeWasteID" name="typeWasteID" class="list-select" asp-items="ViewBag.Waste">
+                        <option disabled selected style="display:none">Seleccione</option>
+                    </select>
+                </div>
+            </div>
+
+        </div>
+        <div id="list-panel-button">
+            <button id="list-button">SEARCH</button>
+        </div>
+    </form>
+</div>
+
+<div id="list-panel-table">
+    <table>
+        <tr id="list-tr">
+            <td class="list-td-title">#REQUEST</td>
+            <td class="list-td-title">ADDRESS</td>
+            <td class="list-td-title">TYPE OF WASTE</td>
+            <td class="list-td-title">DATE OF REQUEST</td>
+            <td class="list-td-title">DATE OF PICKUP</td>
+            <td class="list-td-title">STATUS</td>
+            <td class="list-td-title">DETAILS</td>
+            <td class="list-td-title">UPDATE</td>
+            <td class="list-td-title">DELETE</td>
+        </tr>
+        @if(Model != null)
+        {
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td class="list-td-content">@item.pickupID</td>
+                    <td class="list-td-content">@item.addressRequest</td>
+                    <td class="list-td-content">@item.typeWaste</td>
+                    <td class="list-td-content">@item.pickupRequest.ToString("dd/MM/yyyy")</td>
+                    <td class="list-td-content">@item.pickupDate.ToString("dd/MM/yyyy")</td>
+                    <td class="list-td-content">@item.statusRequest</td>
+                    <td class="list-td-content"><a asp-action="Details" asp-route-id="@item.pickupID"><img class="list-SVG" src="~/img/Requests/List/eye-regular.svg" /></a></td>
+                    <td class="list-td-content"><a asp-action="Edit" asp-route-id="@item.pickupID"><img class="list-SVG" src="~/img/Requests/List/pen-to-square-regular.svg" /></a></td>
+                    <td class="list-td-content"><a asp-action="Delete" asp-route-id="@item.pickupID"><img class="list-SVG" src="~/img/Requests/List/trash-can-regular.svg" /></a></td>
+                </tr>
+            }
+        }
+    </table>
+</div>

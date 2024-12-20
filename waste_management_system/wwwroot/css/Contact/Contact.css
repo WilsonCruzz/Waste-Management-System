@@ -1,0 +1,259 @@
+﻿:root {
+    --border-input-text: #ced4da;
+    --border-focus-input-text: #4CAF50;
+}
+
+#container-contact {
+    display: flex;
+    margin-top: 5%;
+    margin-left: 2.5%;
+    flex-direction: row;
+}
+
+.container-form {
+    display: flex;
+    margin-top: 2%;
+    flex-direction: column;
+}
+
+.container-group-input {
+    display: flex;
+    margin-right: 5%;
+    flex-direction: row;
+}
+
+.container-input {
+    display: flex;
+    margin-bottom: 2%;
+    flex-direction: column;
+}
+
+.label-medium {
+    margin-bottom: 2%;
+    text-align: start;
+}
+
+.label-large {
+    width: 98.5%;
+    display: flex;
+    margin-bottom: 2%;
+    text-align: center;
+    flex-direction: column;
+}
+
+.textInput {
+    width: 600px;
+    height: 40px;
+    margin-right: 50%;
+    margin-right: 20px;
+    border-radius: 5px;
+    padding: .375rem .75rem;
+    border: 1px solid var(--border-input-text);
+}
+
+.textInput-large {
+    width: 100%;
+    height: 40px;
+    margin-right: 50%;
+    margin-right: 20px;
+    border-radius: 5px;
+    padding: .375rem .75rem;
+    border: 1px solid var(--border-input-text);
+}
+
+.textInput:focus {
+    outline: none;
+    border-color: var(--border-focus-input-text);
+    box-shadow: 0 0 10px var(--border-focus-input-text);
+}
+
+.textInput-large:focus {
+    outline: none;
+    border-color: var(--border-focus-input-text);
+    box-shadow: 0 0 10px var(--border-focus-input-text);
+}
+
+.textAreaInput {
+    width: 100%;
+    height: 100px;
+    border-radius: 5px;
+    padding: .375rem .75rem;
+    border: 1px solid var(--border-input-text);
+}
+
+.textAreaInput:focus {
+    outline: none;
+    border-color: var(--border-focus-input-text);
+    box-shadow: 0 0 10px var(--border-focus-input-text);
+}
+
+#button-div {
+    display: flex;
+    justify-content: center;
+}
+
+button {
+    width: 50%;
+    height: 35px;
+    color: white;
+    border-radius: 20px;
+    border: 1px solid var(--border-focus-input-text);
+    background-color: var(--border-focus-input-text);
+}
+
+/* Notebook - 1024 x 1366*/
+@media screen and (min-width: 1024px) and (max-width: 1366px) {
+    #container-contact {
+        margin-top: 1%;
+    }
+
+    #title-Contact {
+        margin-left: 15%;
+    }
+
+    .container-form {
+        margin-top: 2%;
+    }
+
+    .container-group-input {
+        margin-left: 10%;
+    }
+
+    .label-large {
+        margin-left: 10%;
+    }
+
+    .textInput {
+        width: 400px;
+    }
+
+    .textInput-large {
+        width: 99%;
+    }
+
+    .textAreaInput {
+        width: 99%;
+    }
+
+    #button-div {
+        margin-left: 20%;
+    }
+}
+
+/* Notebook - 1024 x 1366 */
+@media screen and (min-width: 1024px) and (max-width: 1366px) {
+    #container-contact {
+        margin-top: 1%;
+    }
+
+    #title-Contact {
+        margin-left: 5%;
+    }
+
+    .container-form {
+        margin-top: 2%;
+    }
+
+    .container-group-input {
+        margin-left: 5%;
+    }
+
+    .label-large {
+        margin-left: 5%;
+    }
+
+    .textInput {
+        width: 500px;
+    }
+
+    .textInput-large {
+        width: 99%;
+    }
+
+    .textAreaInput {
+        width: 99%;
+    }
+
+    #button-div {
+        margin-left: 5%;
+    }
+}
+
+/* Notebook - 1367px x 1919px */
+@media screen and (min-width: 1367px) and (max-width: 1919px) {
+    #container-contact {
+        margin-top: 1%;
+        margin-left: 7%;
+    }
+
+    #title-Contact {
+        margin-left: 5%;
+    }
+
+    .container-form {
+        margin-top: 2%;
+    }
+
+    .container-group-input {
+        margin-left: 5%;
+    }
+
+    .label-large {
+        margin-left: 5%;
+    }
+
+    .textInput {
+        width: 500px;
+    }
+
+    .textInput-large {
+        width: 99%;
+    }
+
+    .textAreaInput {
+        width: 99%;
+    }
+
+    #button-div {
+        margin-left: 5%;
+    }
+}
+
+/* Notebook - 1710px x 1919px*/
+@media screen and (min-width: 1710px) and (max-width: 1919px){
+    #container-contact {
+        margin-top: 1%;
+    }
+
+    #title-Contact {
+        margin-left: 5%;
+    }
+
+    .container-form {
+        margin-top: 2%;
+    }
+
+    .container-group-input {
+        margin-left: 5%;
+    }
+
+    .label-large {
+        margin-left: 5%;
+    }
+
+    .textInput {
+        width: 500px;
+    }
+
+    .textInput-large {
+        width: 99%;
+    }
+
+    .textAreaInput {
+        width: 99%;
+    }
+
+    #button-div {
+        margin-left: 5%;
+    }
+}
